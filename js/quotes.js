@@ -4,41 +4,17 @@ const quotes = [
         author : "George Herbert1"
     },
     {
-        quote : "He that is not handsome at twenty, nor strong at thirty, nor rich at forty, nor wise at fifty, will never be handsome, strong, rich or wise.",
-        author : "George Herbert2"
+        quote : "Nothing is as far away as one minute ago.",
+        author : "Jim Bishop"
     },
     {
-        quote : "He that is not handsome at twenty, nor strong at thirty, nor rich at forty, nor wise at fifty, will never be handsome, strong, rich or wise.",
-        author : "George Herbert3"
+        quote : "The rest is silence.",
+        author : "William Shakespeare"
     },
     {
-        quote : "He that is not handsome at twenty, nor strong at thirty, nor rich at forty, nor wise at fifty, will never be handsome, strong, rich or wise.",
-        author : "George Herbert4"
+        quote : "Experience is a dear teacher, but fools will learn at no other.",
+        author : "Benjamin Franklin"
     },
-    {
-        quote : "He that is not handsome at twenty, nor strong at thirty, nor rich at forty, nor wise at fifty, will never be handsome, strong, rich or wise.",
-        author : "George Herbert5"
-    },
-    {
-        quote : "He that is not handsome at twenty, nor strong at thirty, nor rich at forty, nor wise at fifty, will never be handsome, strong, rich or wise.",
-        author : "George Herbert6"
-    },
-    {
-        quote : "He that is not handsome at twenty, nor strong at thirty, nor rich at forty, nor wise at fifty, will never be handsome, strong, rich or wise.",
-        author : "George Herbert7"
-    },
-    {
-        quote : "He that is not handsome at twenty, nor strong at thirty, nor rich at forty, nor wise at fifty, will never be handsome, strong, rich or wise.",
-        author : "George Herbert8"
-    },
-    {
-        quote : "He that is not handsome at twenty, nor strong at thirty, nor rich at forty, nor wise at fifty, will never be handsome, strong, rich or wise.",
-        author : "George Herbert9"
-    },
-    {
-        quote : "He that is not handsome at twenty, nor strong at thirty, nor rich at forty, nor wise at fifty, will never be handsome, strong, rich or wise.",
-        author : "George Herbert0"
-    }
 ];
 
 const quote = document.querySelector("#quote span:first-child");

@@ -1,3 +1,4 @@
+@import "screens/weather.css";
 .sexy-font{
     font-family: 'Courier New', Courier, monospace;
 }
@@ -7,37 +8,39 @@ body{
     justify-content: center;
     align-items: center;
 }
-h1, .clicked, #clock{
-    color: yellow;
+h1, .clicked, #clock, #quote, #weather{
+    color: white;
+}
+
+.hidden{
+    display: none;
 }
 
 #clock{
-    font-size: 50px;
+    font-size: 80px;
 }
 
 #login-form{
     margin: 50px;
 }
 
-#login-form input{
-    padding: 30px;
+input{
+    padding: 15px 25px;
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid yellow;
+    background-color: rgba(0, 0, 0, 0);
 }
 
-#todo-form input{
-    padding: 30px;
+#login-form input[type="submit"]{
+    background-color: yellow;
 }
+
 #quote{
-    color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-}
-.hidden{
-    display: none;
+    margin-top: 200px;
 }
 img{
     height: 100%;
@@ -47,9 +50,22 @@ img{
     top: 0;
     z-index: -10;
 }
-#weather{
-    color: black;
-    position: absolute;
-    right: 0;
-    top: 0;
+
+::placeholder{
+    font-size: 15px;
+    color: white;
+}
+
+#todo-list{
+    color: white;
+    list-style: none;
+}
+
+#todo-list li span{
+    margin-right: 10px;
+}
+
+#todo-list li button{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
 }
