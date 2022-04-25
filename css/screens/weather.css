@@ -1,8 +1,6 @@
 #weather{
     position: absolute;
-    right: 0;
-    top: 0;
-}
-.fas{
-    margin-right: 12px;
+    right: 10px;
+    top: 10px;
+    font-size: 18px;
 }
