@@ -9,4 +9,8 @@
     #todo-form input[type="text"]::placeholder{
         font-size: 6px;
     }
+    #quote span:first-child{
+        font-size: 14px;
+        text-align: center;
+    }
 }
