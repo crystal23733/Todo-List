@@ -1,0 +1,12 @@
+@media screen and (max-width:500px){
+    input:not([type="submit"]){
+        width: 130px;
+        box-sizing: border-box;
+    }
+    #login-form input[type="text"]::placeholder{
+        font-size: 12px;
+    }
+    #todo-form input[type="text"]::placeholder{
+        font-size: 6px;
+    }
+}
