@@ -1,7 +1,7 @@
 const quotes = [
     {
         quote : "He that is not handsome at twenty, nor strong at thirty, nor rich at forty, nor wise at fifty, will never be handsome, strong, rich or wise.",
-        author : "George Herbert1"
+        author : "George Herbert"
     },
     {
         quote : "Nothing is as far away as one minute ago.",
