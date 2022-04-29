@@ -1,5 +1,6 @@
 @import "screens/weather.css";
 @import "media/media.css";
+@import "screens/todo.css";
 .sexy-font{
     font-family: 'Courier New', Courier, monospace;
 }
@@ -43,6 +44,7 @@ input{
     justify-content: center;
     align-items: center;
     margin-top: 100px;
+    text-align: center;
 }
 
 #quote span:first-child{
@@ -67,16 +69,3 @@ img{
     color: white;
 }
 
-#todo-list{
-    color: white;
-    list-style: none;
-}
-
-#todo-list li span{
-    margin-right: 10px;
-}
-
-#todo-list li button{
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
-}

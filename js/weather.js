@@ -11,7 +11,7 @@ function onGeoOk(position){
             const city = document.querySelector("#weather span:last-child");
             city.textContent = data.name;
             weather.textContent = `${data.weather[0].main} / ${data.main.temp}`;
-            if(data.weather[0].main === "Cloud"){
+            if(data.weather[0].main === "Clouds"){
                 weather.classList.add("fas","fa-cloud");
             }else if(data.weather[0].main === "Rain"){
                 weather.classList.add("fas","fa-cloud-rain");
