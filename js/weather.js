@@ -15,6 +15,8 @@ function onGeoOk(position){
                 weather.classList.add("fas","fa-cloud");
             }else if(data.weather[0].main === "Rain"){
                 weather.classList.add("fas","fa-cloud-rain");
+            }else if(data.weather[0].main === "Clear"){
+                weather.classList.add("fas","fa-sun");
             }
     });
 }
