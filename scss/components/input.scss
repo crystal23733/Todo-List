@@ -1,0 +1,9 @@
+@use "./font.scss";
+
+@mixin inputBox(){
+  width: 35vw;
+  height: 5vh;
+  border: none;
+  font-size: font.$sub-size;
+  font-weight: font.$sub-weight;
+}

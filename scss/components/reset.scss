@@ -1,9 +1,11 @@
 @use "../components/display.scss";
 
-body{
-    @include display.flex(column, start, center);
+*{
     margin: 0;
     padding: 0;
+}
+body{
+    @include display.flex(column, start, center);
     background-color: black;
     color: white;
     height: 100vh;
