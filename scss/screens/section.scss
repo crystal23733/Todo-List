@@ -1,24 +1,59 @@
 @use "../components/display.scss";
+@use "../components/font.scss";
+@use "../components/input.scss";
 
 section{
   width: 100vw;
   height: 100%;
   @include display.flex(column, start, center);
-  & > div{
+  & > div:first-child{
     width: 100%;
     @include display.flex(column, start, center);
-    :first-child{
-      text-align: center;
+    text-align: center;
+    & > *{
       margin: 2vh;
-      width: 60%;
     }
     & > #sub-title{
       @include display.flex(column, center, center);
       width: 40vw;
     }
-    & > form{
+    & > #profile{
+      font-size: font.$sub-size;
+      font-weight: font.$sub-weight;
+    }
+    & > form:first-child{
       @include display.flex(column, start, center);
       width: 40vw;
+      & > input:first-child{
+        @include input.inputBox();
+      }
+      & > input:last-child{
+        width: 8vw;
+        height: 4vh;
+        border: none;
+      }
+      & > *{
+        font-size: font.$dec-size;
+        margin: 1vh;
+      }
+    }
+    & > form > input{
+      @include input.inputBox();
+    }
+  }
+  & > #list-item{
+    @include display.flex(column, center, center);
+    width: 60%;
+    & > ul{
+      @include display.flex(column, center, center);
+      width: 30vw;
+      & > li{
+        @include display.flex(row, space-between, center);
+        width: 100%;
+        & > span{
+          font-size: font.$dec-size;
+        }
+      }
     }
   }
 }

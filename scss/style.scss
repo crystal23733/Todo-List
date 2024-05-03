@@ -14,5 +14,6 @@
 }
 
 .hidden{
+    // !이미 display가 선언되어 있는 경우 클래스가 추가될 때 클래스에 할당된 값이 먼저 올 수 있도록 important 할당
     display: none !important;
 }

@@ -16,6 +16,7 @@ const saveTodos = () => {
 
 // *지우기 이벤트
 const deleteList = (event) => {
+    // *클릭이벤트가 발생한 버튼의 부모요소
     const li = event.target.parentElement;
     li.remove();
     toDos = toDos.filter((todo) => todo.id !== parseInt(li.id));
@@ -33,8 +34,20 @@ const paintList = (liValue) => {
     span.innerText = liValue.text;
     li.appendChild(btn);
     btn.className = "fa-solid fa-delete-left";
+    // *List item 생성될 때 재생될 애니메이션
+    let x = -70
+    const listAnime = () => {
+        x += 1;
+        li.style.transform = `translateX(${x}px)`;
+        if(x === 0){
+            cancelAnimationFrame(listAnime);
+            return;
+        }
+        requestAnimationFrame(listAnime);
+    }
+    requestAnimationFrame(listAnime);
     btn.addEventListener("click", deleteList);
-    saveTodos()
+    saveTodos();
 }
 
 const listHandler = (event) => {
