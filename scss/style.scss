@@ -1,0 +1,18 @@
+// *components
+@use "./components/reset.scss";
+
+// *screens
+@use "./screens/header.scss";
+@use "./screens/section.scss";
+
+// *폰트
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+
+*{
+    font-family: "Dongle", sans-serif;
+    font-style: normal;
+}
+
+.hidden{
+    display: none !important;
+}

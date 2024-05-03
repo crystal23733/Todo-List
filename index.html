@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header id="title">
+        <h1>Todo List</h1>
+    </header>
+    <section>
+        <div>
+            <div id="clock">
+                <p>00:00:00</p>
+            </div>
+            <header id="sub-title">
+                <h1>이름을 입력해주세요.</h1>
+            </header>
+            <h2 id="profile" class="hidden"></h2>
+            <form action="" id="login-form">
+                <input type="text" placeholder="이름을 입력해주세요.">
+                <input type="submit" value="로그인">
+            </form>
+            <form action="", class="hidden" id="list-form">
+                <input type="text" placeholder="할 일을 입력해주세요.">
+            </form>
+        </div>
+        <div id="list-item" class="hidden">
+            <ul>
+                
+            </ul>
+        </div>
+    </section>
+    <script src="js/clock.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/list.js"></script>
+    <script src="js/indexedDB.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+@use "../components/display.scss";
+
+section{
+  width: 100vw;
+  height: 100%;
+  @include display.flex(column, start, center);
+  & > div{
+    width: 100%;
+    @include display.flex(column, start, center);
+    :first-child{
+      text-align: center;
+      margin: 2vh;
+      width: 60%;
+    }
+    & > #sub-title{
+      @include display.flex(column, center, center);
+      width: 40vw;
+    }
+    & > form{
+      @include display.flex(column, start, center);
+      width: 40vw;
+    }
+  }
+}

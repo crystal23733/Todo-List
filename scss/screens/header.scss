@@ -1,0 +1,7 @@
+@use "../components/font.scss";
+
+#title, #clock{
+    font-size: font.$title-size;
+    font-weight: font.$title-weight;
+}
+

@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Dongle&display=swap");
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  height: 100vh;
+  width: 100vw;
+}
+
+a, ul, ol, li {
+  text-decoration: none;
+  list-style: none;
+}
+
+#title, #clock {
+  font-size: 40px;
+  font-weight: 900;
+}
+
+section {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+section > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+section > div :first-child {
+  text-align: center;
+  margin: 2vh;
+  width: 60%;
+}
+section > div > #sub-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
+}
+section > div > form {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 40vw;
+}
+
+* {
+  font-family: "Dongle", sans-serif;
+  font-style: normal;
+}
+
+.hidden {
+  display: none !important;
+}
