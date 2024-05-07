@@ -1,4 +1,4 @@
-// !listForm은 login.js에 할당되었음.
+// !listForm은 users.js에 할당되었음.
 // *리스트에 들어있는 태그
 const listItemUl = document.querySelector("#list-item ul");
 const listInput = listForm.querySelector("input");
@@ -36,6 +36,7 @@ const paintList = (liValue) => {
     btn.className = "fa-solid fa-delete-left";
     // *List item 생성될 때 재생될 애니메이션
     let x = -70
+    let opacity = 0;
     const listAnime = () => {
         x += 1;
         li.style.transform = `translateX(${x}px)`;

@@ -25,6 +25,17 @@ a, ul, ol, li {
   font-weight: 1000;
 }
 
+#title {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#title > * {
+  padding: 1vh;
+}
+
 section {
   width: 100vw;
   height: 100%;
@@ -97,7 +108,7 @@ section > #list-item > ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 20vw;
+  width: 30vw;
 }
 section > #list-item > ul > li {
   display: flex;

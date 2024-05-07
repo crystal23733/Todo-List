@@ -1,7 +1,15 @@
 @use "../components/font.scss";
+@use "../components/display.scss";
 
 #title, #clock{
     font-size: font.$title-size;
     font-weight: font.$title-weight;
 }
 
+#title{
+    width: 100%;
+    @include display.flex(row, space-between, center);
+    & > *{
+        padding: 1vh;
+    }
+}
