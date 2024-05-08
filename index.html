@@ -10,7 +10,16 @@
 <body>
     <header id="title">
         <h1>Todo List</h1>
-        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-bars" id="menu-bar">
+            <ul class="hidden">
+                <li class="hidden menu-list">
+                    <a href="">Not todo-list</a>
+                </li>
+                <li class="hidden menu-list">
+                    <a href="">log out</a>
+                </li>
+            </ul>
+        </i>
     </header>
     <section>
         <div>
@@ -35,9 +44,10 @@
             </ul>
         </div>
     </section>
-    <script src="js/DB/indexedDB.js"></script>
-    <script src="js/clock.js"></script>
-    <script src="js/users.js"></script>
-    <script src="js/list.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+    <script src="js/function/header.js"></script>
+    <script src="js/function/clock.js"></script>
+    <script src="js/function/users.js"></script>
+    <script src="js/function/list.js"></script>
 </body>
 </html>

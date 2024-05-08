@@ -9,7 +9,26 @@
 #title{
     width: 100%;
     @include display.flex(row, space-between, center);
+    background-color: rgb(73, 69, 69);
     & > *{
         padding: 1vh;
+    }
+    & > #menu-bar{
+        @include display.flex(column, center, center);
+        position: relative;
+        padding: 6vh;
+        & > ul{
+            font-size: font.$sub-size;
+            position: absolute;
+            width: 20vw;
+            height: 4vh;
+            top: 120px;
+            & > li{
+                @include display.flex(row, center, center);
+            }
+            &  a{
+                color: white;
+            }
+        }
     }
 }

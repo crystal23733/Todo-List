@@ -8,7 +8,7 @@ const listItem = document.getElementById("list-item");
 
 // *반복되는 값
 const USERNAME_KEY = "username";
-const HIDDEN_KEY = "hidden";
+// !HIDDEN_KEY header에 선언됨
 
 // *로그인폼에 입력 이벤트가 발생하게 되면 실행될 함수
 const loginHandler = (event) => {

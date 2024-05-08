@@ -9,7 +9,32 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-color: rgb(73, 69, 69);
 }
 #title > * {
   padding: 1vh;
+}
+#title > #menu-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 6vh;
+}
+#title > #menu-bar > ul {
+  font-size: 37px;
+  position: absolute;
+  width: 20vw;
+  height: 4vh;
+  top: 120px;
+}
+#title > #menu-bar > ul > li {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#title > #menu-bar > ul a {
+  color: white;
 }
