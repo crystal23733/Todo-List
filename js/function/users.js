@@ -5,6 +5,7 @@ const loginForm = document.getElementById("login-form");
 const loginInput = document.querySelector("#login-form input");
 const listForm = document.getElementById("list-form");
 const listItem = document.getElementById("list-item");
+const logout = document.getElementById("logout");
 
 // *반복되는 값
 const USERNAME_KEY = "username";
@@ -22,10 +23,22 @@ const loginHandler = (event) => {
 const loginUser = (username) => {
     subTitle.classList.add(HIDDEN_KEY);
     loginForm.classList.add(HIDDEN_KEY);
+    logout.classList.remove(HIDDEN_KEY);
     profile.classList.remove(HIDDEN_KEY);
     listForm.classList.remove(HIDDEN_KEY);
     listItem.classList.remove(HIDDEN_KEY);
     profile.innerText = `${username}님 어서오세요.`;
+}
+
+// *로그아웃
+const logoutHandler = () => {
+    localStorage.removeItem(USERNAME_KEY);
+    subTitle.classList.remove(HIDDEN_KEY);
+    loginForm.classList.remove(HIDDEN_KEY);
+    logout.classList.add(HIDDEN_KEY);
+    profile.classList.add(HIDDEN_KEY);
+    listForm.classList.add(HIDDEN_KEY);
+    listItem.classList.add(HIDDEN_KEY);
 }
 
 // *로컬스토리지에 있는 username 가져오기
@@ -36,5 +49,6 @@ if(savedUser === null){
     loginForm.classList.remove(HIDDEN_KEY);
     loginForm.addEventListener("submit", loginHandler);
 } else {
+    logout.addEventListener('click', logoutHandler);
     loginUser(savedUser);
 }
