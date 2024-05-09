@@ -9,16 +9,16 @@ const menuOpenHandler = () => {
   menuBarUl.classList.remove(HIDDEN_KEY);
   for(let i = 0; i < menuList.length; i++){
     menuList[i].classList.remove(HIDDEN_KEY);
-    // let height = title.clientHeight;
-    // const openAnime = () => {
-    //   height += 5;
-    //   if(height < 460){
-    //     title.style.height = `${height}px`;
-    //     cancelAnimationFrame(openAnime);
-    //   }
-    //   requestAnimationFrame(openAnime);
-    // }
-    // requestAnimationFrame(openAnime);
+    let height = title.clientHeight;
+    const openAnime = () => {
+      height += 5;
+      if(height < 260){
+        title.style.height = `${height}px`;
+        cancelAnimationFrame(openAnime);
+      }
+      requestAnimationFrame(openAnime);
+    }
+    requestAnimationFrame(openAnime);
   }
 }
 
@@ -26,16 +26,16 @@ const menuCloseHandler= () =>{
   menuBarUl.classList.add(HIDDEN_KEY);
   for(let i = 0; i < menuList.length; i++){
     menuList[i].classList.add(HIDDEN_KEY);
-    // let height = title.clientHeight;
-    // const closeAnime = () => {
-    //   height -= 5;
-    //   if(height > 179){
-    //     title.style.height = `${height}px`;
-    //     cancelAnimationFrame(closeAnime);
-    //   }
-    //   requestAnimationFrame(closeAnime);
-    // }
-    // requestAnimationFrame(closeAnime);
+    let height = title.clientHeight;
+    const closeAnime = () => {
+      height -= 5;
+      if(height > 179){
+        title.style.height = `${height}px`;
+        cancelAnimationFrame(closeAnime);
+      }
+      requestAnimationFrame(closeAnime);
+    }
+    requestAnimationFrame(closeAnime);
   }
 }
 

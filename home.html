@@ -31,11 +31,11 @@
             </header>
             <h2 id="profile" class="hidden"></h2>
             <form action="" id="login-form">
-                <input type="text" placeholder="이름을 입력해주세요." maxlength="10">
+                <input type="text" placeholder="이름을 입력해주세요." minlength="2" maxlength="10">
                 <input type="submit" value="로그인">
             </form>
             <form action="", class="hidden" id="list-form">
-                <input type="text" placeholder="할 일을 입력해주세요." maxlength="30">
+                <input type="text" placeholder="할 일을 입력해주세요." minlength="2" maxlength="30">
             </form>
         </div>
         <div id="list-item" class="hidden">
@@ -44,7 +44,6 @@
             </ul>
         </div>
     </section>
-    <!-- <script src="js/main.js"></script> -->
     <script src="js/function/header.js"></script>
     <script src="js/function/clock.js"></script>
     <script src="js/function/users.js"></script>
