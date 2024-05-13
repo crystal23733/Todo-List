@@ -1,14 +1,15 @@
-const title = document.getElementById("title");
-const menuBar = document.getElementById("menu-bar");
-const menuBarUl = document.querySelector("#menu-bar ul");
-const menuList = document.getElementsByClassName("menu-list");
+import { HIDDEN_KEY } from "./modules/KEY.js";
+import { menu, title } from "./modules/selector.js";
 
-const HIDDEN_KEY = "hidden";
+// const title = document.getElementById("title");
+// const menuBar = document.getElementById("menu-bar");
+// const menuBarUl = document.querySelector("#menu-bar ul");
+// const menuList = document.getElementsByClassName("menu-list");
 
 const menuOpenHandler = () => {
-  menuBarUl.classList.remove(HIDDEN_KEY);
-  for(let i = 0; i < menuList.length; i++){
-    menuList[i].classList.remove(HIDDEN_KEY);
+  menu.menuBarUl.classList.remove(HIDDEN_KEY);
+  for(let i = 0; i < menu.menuList.length; i++){
+    menu.menuList[i].classList.remove(HIDDEN_KEY);
     let height = title.clientHeight;
     const openAnime = () => {
       height += 5;
@@ -23,9 +24,9 @@ const menuOpenHandler = () => {
 }
 
 const menuCloseHandler= () =>{
-  menuBarUl.classList.add(HIDDEN_KEY);
-  for(let i = 0; i < menuList.length; i++){
-    menuList[i].classList.add(HIDDEN_KEY);
+  menu.menuBarUl.classList.add(HIDDEN_KEY);
+  for(let i = 0; i < menu.menuList.length; i++){
+    menu.menuList[i].classList.add(HIDDEN_KEY);
     let height = title.clientHeight;
     const closeAnime = () => {
       height -= 5;
@@ -40,6 +41,6 @@ const menuCloseHandler= () =>{
 }
 
 
-menuBar.addEventListener("click", menuOpenHandler);
+menu.menuBar.addEventListener("click", menuOpenHandler);
 // *mouseout을 주면 menubar밖으로만 빠져나가도 사라져버리기 때문에 title에 leave 할당
 title.addEventListener('mouseleave', menuCloseHandler);

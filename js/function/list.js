@@ -1,10 +1,5 @@
-// !listForm은 users.js에 할당되었음.
-// *리스트에 들어있는 태그
-const listItemUl = document.querySelector("#list-item ul");
-const listInput = listForm.querySelector("input");
-
-// *중복되는 값
-const TODOS_KEY = "todos";
+import { TODOS_KEY } from "./modules/KEY.js";
+import { list } from "./modules/selector.js";
 
 // *할 일 목록 배열
 let toDos = [];
@@ -28,7 +23,7 @@ const paintList = (liValue) => {
     const li = document.createElement("li");
     const span = document.createElement("span");
     const btn = document.createElement("div");
-    listItemUl.appendChild(li);
+    list.listItemUl.appendChild(li);
     li.id = liValue.id;
     li.appendChild(span);
     span.innerText = liValue.text;
@@ -36,7 +31,6 @@ const paintList = (liValue) => {
     btn.className = "fa-solid fa-delete-left";
     // *List item 생성될 때 재생될 애니메이션
     let x = -70
-    let opacity = 0;
     const listAnime = () => {
         x += 1;
         li.style.transform = `translateX(${x}px)`;
@@ -53,8 +47,8 @@ const paintList = (liValue) => {
 
 const listHandler = (event) => {
     event.preventDefault();
-    const liValue = listInput.value;
-    listInput.value = "";
+    const liValue = list.listInput.value;
+    list.listInput.value = "";
     const toDosObj = {
         // *삭제버튼을 위해 시간으로 랜덤id 할당
         // TODO 나중에 DB쓸경우 id 자동 할당해주기 때문에 바꿀 필요 있음
@@ -76,4 +70,4 @@ if(savedTodos !== null){
     parseTodos.forEach(paintList);
 }
 
-listForm.addEventListener("submit", listHandler);
+list.listForm.addEventListener("submit", listHandler);
