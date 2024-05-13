@@ -31,7 +31,8 @@ const loginUser = (username) => {
 }
 
 // *로그아웃
-const logoutHandler = () => {
+const logoutHandler = (event) => {
+    event.preventDefault();
     localStorage.removeItem(USERNAME_KEY);
     subTitle.classList.remove(HIDDEN_KEY);
     loginForm.classList.remove(HIDDEN_KEY);
@@ -39,6 +40,7 @@ const logoutHandler = () => {
     profile.classList.add(HIDDEN_KEY);
     listForm.classList.add(HIDDEN_KEY);
     listItem.classList.add(HIDDEN_KEY);
+    console.log("logout");
 }
 
 // *로컬스토리지에 있는 username 가져오기

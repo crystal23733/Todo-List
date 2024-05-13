@@ -16,10 +16,6 @@ const server = http.createServer((req, res) => {
         return res.end(data, 'utf-8');
       });
     }
-    console.log(url);
-    console.log(method);
-  }
-  if(method === "GET"){
     if(url === "/css/style.css"){
       res.writeHead(200, {'Content-type': 'text/css'});
       fs.readFile('../../css/style.css', (err, data) => {
@@ -29,8 +25,6 @@ const server = http.createServer((req, res) => {
         return res.end(data, 'utf-8');
       })
     }
-  }
-  if(method === "GET"){
     if(url === "/js/function/clock.js"){
       res.writeHead(200, {'Content-type': 'text/javascript'});
       fs.readFile('../../js/function/clock.js', (err, data) => {
@@ -40,8 +34,6 @@ const server = http.createServer((req, res) => {
         return res.end(data, 'utf-8');
       })
     }
-  }
-  if(method === "GET"){
     if(url === "/js/function/header.js"){
       res.writeHead(200, {'Content-type': 'text/javascript'});
       fs.readFile('../../js/function/header.js', (err, data) => {
@@ -51,8 +43,6 @@ const server = http.createServer((req, res) => {
         return res.end(data, 'utf-8');
       })
     }
-  }
-  if(method === "GET"){
     if(url === "/js/function/list.js"){
       res.writeHead(200, {'Content-type': 'text/javascript'});
       fs.readFile('../../js/function/list.js', (err, data) => {
@@ -62,8 +52,6 @@ const server = http.createServer((req, res) => {
         return res.end(data, 'utf-8');
       })
     }
-  }
-  if(method === "GET"){
     if(url === "/js/function/users.js"){
       res.writeHead(200, {'Content-type': 'text/javascript'});
       fs.readFile('../../js/function/users.js', (err, data) => {
@@ -73,6 +61,8 @@ const server = http.createServer((req, res) => {
         return res.end(data, 'utf-8');
       })
     }
+    console.log(req.url);
+    console.log(req.method);
   }
 })
 
