@@ -1,11 +1,6 @@
 import { HIDDEN_KEY } from "./modules/KEY.js";
 import { menu, title } from "./modules/selector.js";
 
-// const title = document.getElementById("title");
-// const menuBar = document.getElementById("menu-bar");
-// const menuBarUl = document.querySelector("#menu-bar ul");
-// const menuList = document.getElementsByClassName("menu-list");
-
 const menuOpenHandler = () => {
   menu.menuBarUl.classList.remove(HIDDEN_KEY);
   for(let i = 0; i < menu.menuList.length; i++){

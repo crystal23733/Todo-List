@@ -1,5 +1,5 @@
-const http = require('http');
-const fs = require('fs');
+import http from 'http';
+import fs from 'fs';
 
 const PORT = 3000;
 
@@ -9,7 +9,7 @@ const server = http.createServer((req, res) => {
   if(method === "GET"){
     if(url === "/"){
       res.writeHead(200, {'Content-type': 'text/html'});
-      fs.readFile('../../home.html', (err, data) => {
+      fs.readFile('./public/home.html', (err, data) => {
         if(err){
           return console.log(err);
         }
@@ -18,43 +18,61 @@ const server = http.createServer((req, res) => {
     }
     if(url === "/css/style.css"){
       res.writeHead(200, {'Content-type': 'text/css'});
-      fs.readFile('../../css/style.css', (err, data) => {
+      fs.readFile('./public/css/style.css', (err, data) => {
         if(err){
           return console.log(err);
         }
         return res.end(data, 'utf-8');
       })
     }
-    if(url === "/js/function/clock.js"){
+    if(url === "/js/clock.js"){
       res.writeHead(200, {'Content-type': 'text/javascript'});
-      fs.readFile('../../js/function/clock.js', (err, data) => {
+      fs.readFile('./public/js/clock.js', (err, data) => {
         if(err){
           return console.log(err);
         }
         return res.end(data, 'utf-8');
       })
     }
-    if(url === "/js/function/header.js"){
+    if(url === "/js/header.js"){
       res.writeHead(200, {'Content-type': 'text/javascript'});
-      fs.readFile('../../js/function/header.js', (err, data) => {
+      fs.readFile('./public/js/header.js', (err, data) => {
         if(err){
           return console.log(err);
         }
         return res.end(data, 'utf-8');
       })
     }
-    if(url === "/js/function/list.js"){
+    if(url === "/js/list.js"){
       res.writeHead(200, {'Content-type': 'text/javascript'});
-      fs.readFile('../../js/function/list.js', (err, data) => {
+      fs.readFile('./public/js/list.js', (err, data) => {
         if(err){
           return console.log(err);
         }
         return res.end(data, 'utf-8');
       })
     }
-    if(url === "/js/function/users.js"){
+    if(url === "/js/users.js"){
       res.writeHead(200, {'Content-type': 'text/javascript'});
-      fs.readFile('../../js/function/users.js', (err, data) => {
+      fs.readFile('./public/js/users.js', (err, data) => {
+        if(err){
+          return console.log(err);
+        }
+        return res.end(data, 'utf-8');
+      })
+    }
+    if(url === "/js/modules/KEY.js"){
+      res.writeHead(200, {'Content-type': 'text/javascript'});
+      fs.readFile('./public/js/modules/KEY.js', (err, data) => {
+        if(err){
+          return console.log(err);
+        }
+        return res.end(data, 'utf-8');
+      })
+    }
+    if(url === "/js/modules/selector.js"){
+      res.writeHead(200, {'Content-type': 'text/javascript'});
+      fs.readFile('./public/js/modules/selector.js', (err, data) => {
         if(err){
           return console.log(err);
         }
