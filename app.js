@@ -13,7 +13,7 @@ const server = http.createServer((req, res) => {
         if(err){
           return console.log(err);
         }
-        return res.end(data, 'utf-8');
+        return res.end(data);
       });
     }
     if(url === "/css/style.css"){
@@ -22,7 +22,7 @@ const server = http.createServer((req, res) => {
         if(err){
           return console.log(err);
         }
-        return res.end(data, 'utf-8');
+        return res.end(data);
       })
     }
     if(url === "/js/clock.js"){
@@ -31,7 +31,7 @@ const server = http.createServer((req, res) => {
         if(err){
           return console.log(err);
         }
-        return res.end(data, 'utf-8');
+        return res.end(data);
       })
     }
     if(url === "/js/header.js"){
@@ -40,7 +40,7 @@ const server = http.createServer((req, res) => {
         if(err){
           return console.log(err);
         }
-        return res.end(data, 'utf-8');
+        return res.end(data);
       })
     }
     if(url === "/js/list.js"){
@@ -49,7 +49,7 @@ const server = http.createServer((req, res) => {
         if(err){
           return console.log(err);
         }
-        return res.end(data, 'utf-8');
+        return res.end(data);
       })
     }
     if(url === "/js/users.js"){
@@ -58,7 +58,7 @@ const server = http.createServer((req, res) => {
         if(err){
           return console.log(err);
         }
-        return res.end(data, 'utf-8');
+        return res.end(data);
       })
     }
     if(url === "/js/modules/KEY.js"){
@@ -67,7 +67,7 @@ const server = http.createServer((req, res) => {
         if(err){
           return console.log(err);
         }
-        return res.end(data, 'utf-8');
+        return res.end(data);
       })
     }
     if(url === "/js/modules/selector.js"){
@@ -76,7 +76,7 @@ const server = http.createServer((req, res) => {
         if(err){
           return console.log(err);
         }
-        return res.end(data, 'utf-8');
+        return res.end(data);
       })
     }
     console.log(req.url);
