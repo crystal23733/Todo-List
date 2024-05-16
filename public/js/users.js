@@ -15,13 +15,13 @@ const loginUser = (username) => {
     displayItem.addItem(subTitle);
     displayItem.addItem(login.loginForm);
     logout.classList.remove(HIDDEN_KEY);
-    // displayItem.removeItemBlock(logout);
+    // displayItem.removeItem(logout);
     profile.classList.remove(HIDDEN_KEY);
-    // displayItem.removeItemBlock(profile);
+    // displayItem.removeItem(profile);
     list.listForm.classList.remove(HIDDEN_KEY);
-    // displayItem.removeItemBlock(list.listForm);
+    // displayItem.removeItem(list.listForm);
     list.listItem.classList.remove(HIDDEN_KEY);
-    // displayItem.removeItemBlock(list.listItem);
+    // displayItem.removeItem(list.listItem);
     profile.innerText = `${username}님 어서오세요.`;
 }
 
@@ -30,9 +30,9 @@ const logoutHandler = (event) => {
     event.preventDefault();
     localStorage.removeItem(USERNAME_KEY);
     subTitle.classList.remove(HIDDEN_KEY);
-    // displayItem.removeItemBlock(subTitle);
+    // displayItem.removeItem(subTitle);
     login.loginForm.classList.remove(HIDDEN_KEY);
-    // displayItem.removeItemBlock(login.loginForm);
+    // displayItem.removeItem(login.loginForm);
     logout.classList.add(HIDDEN_KEY);
     // displayItem.addItem(logout);
     profile.classList.add(HIDDEN_KEY);
@@ -50,7 +50,7 @@ const savedUser = localStorage.getItem(USERNAME_KEY);
 // *로컬스토리지에 값이 없거나 있을 때 실행될 조건문
 if(savedUser === null){
     login.loginForm.classList.remove(HIDDEN_KEY);
-    // displayItem.removeItemBlock(login.loginForm);
+    // displayItem.removeItem(login.loginForm);
     login.loginForm.addEventListener("submit", loginHandler);
 } else {
     logout.addEventListener('click', logoutHandler);

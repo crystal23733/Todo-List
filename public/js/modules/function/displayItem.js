@@ -2,10 +2,7 @@ export const displayItem = {
   addItem : (item) => {
     item.style.display = 'none';
   },
-  removeItemFlex : (item) => {
-    item.style.display = 'flex';
-  },
-  removeItemBlock : (item) => {
+  removeItem : (item) => {
     item.style.display = 'block';
   }
 }
