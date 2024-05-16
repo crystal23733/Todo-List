@@ -12,8 +12,10 @@ const loginHandler = (event) => {
 
 // *로그인폼 이벤트가 종료되면 실행될 함수
 const loginUser = (username) => {
-    displayItem.addItem(subTitle);
-    displayItem.addItem(login.loginForm);
+    subTitle.classList.add(HIDDEN_KEY);
+    // displayItem.addItem(subTitle);
+    login.loginForm.classList.add(HIDDEN_KEY);
+    // displayItem.addItem(login.loginForm);
     logout.classList.remove(HIDDEN_KEY);
     // displayItem.removeItem(logout);
     profile.classList.remove(HIDDEN_KEY);
