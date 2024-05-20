@@ -1,63 +1,67 @@
 import http from 'http';
 import fs from 'fs';
+import path from 'path';
 
 const PORT = 3000;
 
-const server = http.createServer((req, res) => {
-  const method = req.method;
-  const url = req.url;
-  if(method === "GET"){
-    switch(url){
-      case "/" :
-        console.log('clear');
-        res.writeHead(200, {'Content-type': 'text/html'});
-        const data = fs.readFileSync('./public/home.html');
-        res.end(data);
-        break;
-      case "/css/style.css" : 
-        console.log('clear2');
-        res.writeHead(200, {'Content-type': 'text/css'});
-        const data1 = fs.readFileSync('./public/css/style.css');
-        res.end(data1);
-        break;
-      case "/js/clock.js" :
-        res.writeHead(200, {'Content-type': 'text/javascript'});
-        const data2 = fs.readFileSync('./public/js/clock.js');
-        res.end(data2);
-        break;
-      case "/js/header.js" :
-        res.writeHead(200, {'Content-type': 'text/javascript'});
-        const data3 = fs.readFileSync('./public/js/header.js');
-        res.end(data3);
-        break;
-      case "/js/list.js" : 
-        res.writeHead(200, {'Content-type': 'text/javascript'});
-        const data4 = fs.readFileSync('./public/js/list.js');
-        res.end(data4);
-        break;
-      case "/js/users.js" :
-        res.writeHead(200, {'Content-type': 'text/javascript'});
-        const data5 = fs.readFileSync('./public/js/users.js');
-        res.end(data5);
-        break;
-      case "/js/modules/KEY.js" :
-        res.writeHead(200, {'Content-type': 'text/javascript'});
-        const data6 = fs.readFileSync('./public/js/modules/KEY.js');
-        res.end(data6);
-        break;
-      case "/js/modules/selector.js" : 
-        res.writeHead(200, {'Content-type': 'text/javascript'});
-        const data7 = fs.readFileSync('./public/js/modules/selector.js');
-        res.end(data7);
-        break;
-      case "/js/modules/function/displayItem.js" : 
-        res.writeHead(200, {'Content-type': 'text/javascript'});
-        const data8 = fs.readFileSync('./public/js/modules/function/displayItem.js');
-        res.end(data8);
-        break;
+const mimeType = {
+  '.html' : 'text/html',
+  '.css' : 'text/css',
+  '.js' : 'application/javascript',
+  '.json' : 'appllication/json',
+  '.ico' : 'image/x-icon'
+}
+
+const fileUtils = {
+  getFilePath : (fileUrl) => {
+    let filePath;
+    if(fileUrl === '/'){
+      filePath = './public/home.html';
+    } else {
+      filePath = `./public${fileUrl}`;
     }
-    console.log(req.url);
-    console.log(req.method);
+    console.log(`filePath : ${filePath}`);
+    return filePath;
+  },
+  getFileExtension : (filePath) => {
+    let ext = path.extname(filePath);
+    console.log(`ext : ${ext.toLowerCase()}`);
+    return ext.toLowerCase();
+  },
+  getContentType : (ext) => {
+    if(mimeType.hasOwnProperty(ext)){
+      console.log(mimeType.hasOwnProperty(ext));
+      return mimeType[ext];
+    } else {
+      return 'text/plain';
+    }
+  }
+}
+
+const server = http.createServer((req, res) => {
+  const { method, url } = req;
+  console.log(method, url);
+  // *파일 경로 설정
+  let filePath = fileUtils.getFilePath(url);
+  // *확장자 가져오기
+  let ext = fileUtils.getFileExtension(filePath);
+  // *콘텐츠 타입
+  let contentType = fileUtils.getContentType(ext);
+  if(method === 'GET'){
+    fs.readFile(filePath, (err, data) => {
+      if(err){
+        if(err.code === 'ENOENT'){
+          res.writeHead(404, {'Content-type' : 'text/html; charset=utf-8'});
+          res.end('페이지를 찾을 수 없음');
+        } else {
+          res.writeHead(500, {'Content-type': 'text/plain; charset=utf-8'});
+          res.end('서버에러');
+        }
+      } else {
+        res.writeHead(200, {'Content-type' : contentType});
+        res.end(data);
+      }
+    })
   }
 })
 
