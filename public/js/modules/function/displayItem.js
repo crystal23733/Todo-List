@@ -4,5 +4,8 @@ export const displayItem = {
   },
   removeItem : (item) => {
     item.style.display = 'block';
+  },
+  flexItem : (item) => {
+    item.style.display = 'flex';
   }
 }

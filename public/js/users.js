@@ -1,6 +1,10 @@
-import { HIDDEN_KEY, USERNAME_KEY } from "./modules/KEY.js";
+import { USERNAME_KEY } from "./modules/KEY.js";
 import { displayItem } from "./modules/function/displayItem.js";
 import { login, logout, profile, subTitle, list } from "./modules/selector.js";
+
+displayItem.addItem(profile);
+displayItem.addItem(list.listForm);
+displayItem.addItem(list.listItem);
 
 // *로그인폼에 입력 이벤트가 발생하게 되면 실행될 함수
 const loginHandler = (event) => {
@@ -12,18 +16,12 @@ const loginHandler = (event) => {
 
 // *로그인폼 이벤트가 종료되면 실행될 함수
 const loginUser = (username) => {
-    subTitle.classList.add(HIDDEN_KEY);
-    // displayItem.addItem(subTitle);
-    login.loginForm.classList.add(HIDDEN_KEY);
-    // displayItem.addItem(login.loginForm);
-    logout.classList.remove(HIDDEN_KEY);
-    // displayItem.removeItem(logout);
-    profile.classList.remove(HIDDEN_KEY);
-    // displayItem.removeItem(profile);
-    list.listForm.classList.remove(HIDDEN_KEY);
-    // displayItem.removeItem(list.listForm);
-    list.listItem.classList.remove(HIDDEN_KEY);
-    // displayItem.removeItem(list.listItem);
+    displayItem.addItem(subTitle);
+    displayItem.addItem(login.loginForm);
+    displayItem.removeItem(logout);
+    displayItem.removeItem(profile);
+    displayItem.removeItem(list.listForm);
+    displayItem.flexItem(list.listItem);
     profile.innerText = `${username}님 어서오세요.`;
 }
 
@@ -31,18 +29,12 @@ const loginUser = (username) => {
 const logoutHandler = (event) => {
     event.preventDefault();
     localStorage.removeItem(USERNAME_KEY);
-    subTitle.classList.remove(HIDDEN_KEY);
-    // displayItem.removeItem(subTitle);
-    login.loginForm.classList.remove(HIDDEN_KEY);
-    // displayItem.removeItem(login.loginForm);
-    logout.classList.add(HIDDEN_KEY);
-    // displayItem.addItem(logout);
-    profile.classList.add(HIDDEN_KEY);
-    // displayItem.addItem(profile);
-    list.listForm.classList.add(HIDDEN_KEY);
-    // displayItem.addItem(list.listForm);
-    list.listItem.classList.add(HIDDEN_KEY);
-    // displayItem.addItem(list.listItem);
+    displayItem.removeItem(subTitle);
+    displayItem.removeItem(login.loginForm);
+    displayItem.addItem(logout);
+    displayItem.addItem(profile);
+    displayItem.addItem(list.listForm);
+    displayItem.addItem(list.listItem);
     console.log("logout");
 }
 
@@ -51,8 +43,7 @@ const savedUser = localStorage.getItem(USERNAME_KEY);
 
 // *로컬스토리지에 값이 없거나 있을 때 실행될 조건문
 if(savedUser === null){
-    login.loginForm.classList.remove(HIDDEN_KEY);
-    // displayItem.removeItem(login.loginForm);
+    displayItem.removeItem(login.loginForm);
     login.loginForm.addEventListener("submit", loginHandler);
 } else {
     logout.addEventListener('click', logoutHandler);

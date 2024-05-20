@@ -23,6 +23,7 @@
             width: 20vw;
             height: 4vh;
             top: 120px;
+            text-align: center;
             & > li{
                 @include display.flex(row, center, center);
             }

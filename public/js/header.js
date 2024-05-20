@@ -1,13 +1,13 @@
-import { HIDDEN_KEY } from "./modules/KEY.js";
 import { displayItem } from "./modules/function/displayItem.js";
-import { menu, title } from "./modules/selector.js";
+import { logout, menu, title } from "./modules/selector.js";
+
+displayItem.addItem(menu.menuBarUl);
+displayItem.addItem(logout);
 
 const menuOpenHandler = () => {
-  menu.menuBarUl.classList.remove(HIDDEN_KEY);
-  // displayItem.removeItem(menu.menuBarUl);
+  displayItem.removeItem(menu.menuBarUl);
   for(let i = 0; i < menu.menuList.length; i++){
-    menu.menuList[i].classList.remove(HIDDEN_KEY);
-    // displayItem.removeItem(menu.menuList[i]);
+    displayItem.removeItem(menu.menuList[i]);
     let height = title.clientHeight;
     const openAnime = () => {
       height += 5;
@@ -22,11 +22,9 @@ const menuOpenHandler = () => {
 }
 
 const menuCloseHandler= () =>{
-  menu.menuBarUl.classList.add(HIDDEN_KEY);
-  // displayItem.addItem(menu.menuBarUl);
+  displayItem.addItem(menu.menuBarUl);
   for(let i = 0; i < menu.menuList.length; i++){
-    menu.menuList[i].classList.add(HIDDEN_KEY);
-    // displayItem.addItem(menu.menuList[i]);
+    displayItem.addItem(menu.menuList[i]);
     let height = title.clientHeight;
     const closeAnime = () => {
       height -= 5;
