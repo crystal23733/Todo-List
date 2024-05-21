@@ -26,3 +26,11 @@ export const list = {
   listItemUl : document.getElementById('list-item').children[0],
   listInput : document.getElementById("list-form").children[0],
 }
+
+// *footer 날씨
+export const weather = {
+  weathers : document.getElementById('weather'),
+  tempIcon : document.getElementById('temp-icon'),
+  tempText : document.getElementById('temp-text'),
+  locations : document.getElementById('locations'),
+}

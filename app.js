@@ -4,6 +4,7 @@ import path from 'path';
 
 const PORT = 3000;
 
+// *확장자 객체
 const mimeType = {
   '.html' : 'text/html',
   '.css' : 'text/css',
@@ -12,6 +13,7 @@ const mimeType = {
   '.ico' : 'image/x-icon'
 }
 
+// *파일 경로와 정보를 가져오는 함수
 const fileUtils = {
   getFilePath : (fileUrl) => {
     let filePath;

@@ -82,3 +82,22 @@ section > #list-item > ul > li {
 section > #list-item > ul > li > span {
   font-size: 30px;
 }
+section > #weather {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 37px;
+}
+section > #weather > * {
+  padding: 10px;
+}
+section > #weather > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}

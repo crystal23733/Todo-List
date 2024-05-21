@@ -56,4 +56,17 @@ section{
       }
     }
   }
+  & > #weather{
+    @include display.flex(row, start, center);
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: font.$sub-size;
+    & > *{
+      padding: 10px;
+    }
+    & > div{
+      @include display.flex(row, start, center);
+    }
+  }
 }
