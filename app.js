@@ -70,3 +70,5 @@ const server = http.createServer((req, res) => {
 server.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
 });
+
+// todo 로그아웃 하고난 뒤 다시 로그인 할 때 GET요청으로 보내게 되어 ?가 url에 추가되어 페이지를 불러올 수 없음, 고쳐야함
