@@ -17,9 +17,7 @@ const locationSuccess = (position) => {
   xhr.send();
   xhr.onload = () => {
     if(xhr.status === 200){
-      console.log(JSON.parse(xhr.response));
       const APIweather = JSON.parse(xhr.response);
-      console.log(APIweather.weather[0].main);
       switch(APIweather.weather[0].main){
         case 'Clouds' :
           weatherIcon.clouds.forEach((icon) => {weather.weathers.classList.add(icon)});

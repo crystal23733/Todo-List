@@ -2,7 +2,7 @@ import http from 'http';
 import fs from 'fs';
 import path from 'path';
 
-const PORT = 3000;
+const PORT = 8080;
 
 // *확장자 객체
 const mimeType = {
