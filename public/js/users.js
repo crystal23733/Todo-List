@@ -7,8 +7,7 @@ displayItem.addItem(list.listForm);
 displayItem.addItem(list.listItem);
 
 // *로그인폼에 입력 이벤트가 발생하게 되면 실행될 함수
-const loginHandler = (event) => {
-    event.preventDefault();
+const loginHandler = () => {
     const username = login.loginInput.value;
     localStorage.setItem(USERNAME_KEY, username);
     loginUser(username);
@@ -26,8 +25,7 @@ const loginUser = (username) => {
 }
 
 // *로그아웃
-const logoutHandler = (event) => {
-    event.preventDefault();
+const logoutHandler = () => {
     localStorage.removeItem(USERNAME_KEY);
     displayItem.removeItem(subTitle);
     displayItem.removeItem(login.loginForm);
