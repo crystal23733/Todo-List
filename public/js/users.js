@@ -47,6 +47,3 @@ if(savedUser === null){
     logout.addEventListener('click', logoutHandler);
     loginUser(savedUser);
 }
-
-// todo 모듈화 진행한 함수 주석처리 완료
-// todo 시험 필요

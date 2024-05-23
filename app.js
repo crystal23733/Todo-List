@@ -22,17 +22,17 @@ const fileUtils = {
     } else {
       filePath = `./public${fileUrl}`;
     }
-    console.log(`filePath : ${filePath}`);
+    // console.log(`filePath : ${filePath}`);
     return filePath;
   },
   getFileExtension : (filePath) => {
     let ext = path.extname(filePath);
-    console.log(`ext : ${ext.toLowerCase()}`);
+    // console.log(`ext : ${ext.toLowerCase()}`);
     return ext.toLowerCase();
   },
   getContentType : (ext) => {
     if(mimeType.hasOwnProperty(ext)){
-      console.log(mimeType.hasOwnProperty(ext));
+      // console.log(mimeType.hasOwnProperty(ext));
       return mimeType[ext];
     } else {
       return 'text/plain';
@@ -42,7 +42,7 @@ const fileUtils = {
 
 const server = http.createServer((req, res) => {
   const { method, url } = req;
-  console.log(method, url);
+  // console.log(method, url);
   // *파일 경로 설정
   let filePath = fileUtils.getFilePath(url);
   // *확장자 가져오기
@@ -64,6 +64,25 @@ const server = http.createServer((req, res) => {
         res.end(data);
       }
     })
+  } else if(method === 'POST'){
+    if(url === '/users'){
+      let body = '';
+      req.on('data', (chunk) => {
+        body += chunk.toString();
+      });
+      req.on('end', () => {
+        const params = new URLSearchParams(body);
+        const user = params.get('user');
+        const nameData = {user : user};
+        const jsonNameData = JSON.stringify(nameData, null, 2);
+        fs.writeFile('./public/js/DB/data.json', jsonNameData, (err) => {
+          if(err){
+            res.writeHead(500, {'Content-type' : 'text/plain; charset=utf-8'});
+            res.end('서버에러');
+          }
+        });
+      })
+    }
   }
 })
 
@@ -71,4 +90,5 @@ server.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
 });
 
-// todo 로그아웃 하고난 뒤 다시 로그인 할 때 GET요청으로 보내게 되어 ?가 url에 추가되어 페이지를 불러올 수 없음, 고쳐야함
+// todo user, list Data를 post로 json파일에 저장, /로 redirect하기
+// * form method POST로 ?없앰

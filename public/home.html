@@ -27,8 +27,8 @@
                 <h1>이름을 입력해주세요.</h1>
             </header>
             <h2 id="profile"></h2>
-            <form action="/" id="login-form">
-                <input type="text" placeholder="이름을 입력해주세요." minlength="2" maxlength="10">
+            <form id="login-form" method="POST" action="/users">
+                <input type="text" placeholder="이름을 입력해주세요." minlength="2" maxlength="10" name="user">
                 <input type="submit" value="로그인">
             </form>
             <form action="/" id="list-form">
