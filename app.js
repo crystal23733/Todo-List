@@ -1,6 +1,7 @@
 import http from 'http';
 import fs from 'fs';
 import path from 'path';
+import qs from 'querystring';
 
 const PORT = 8080;
 
@@ -41,8 +42,8 @@ const fileUtils = {
 }
 
 const server = http.createServer((req, res) => {
-  const { method, url } = req;
-  // console.log(method, url);
+  let { method, url } = req;
+  console.log(method, url);
   // *파일 경로 설정
   let filePath = fileUtils.getFilePath(url);
   // *확장자 가져오기
@@ -65,7 +66,7 @@ const server = http.createServer((req, res) => {
       }
     })
   } else if(method === 'POST'){
-    if(url === '/users'){
+    if(url === '/'){
       let body = '';
       req.on('data', (chunk) => {
         body += chunk.toString();
@@ -80,6 +81,10 @@ const server = http.createServer((req, res) => {
             res.writeHead(500, {'Content-type' : 'text/plain; charset=utf-8'});
             res.end('서버에러');
           }
+          fs.readFile(filePath, (err, data) => {
+            res.writeHead(302, {'Content-type' : contentType});
+            res.end(data);
+          })
         });
       })
     }
